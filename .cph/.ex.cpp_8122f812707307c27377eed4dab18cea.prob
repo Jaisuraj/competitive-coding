@@ -1,0 +1,1 @@
+{"name":"Local: ex","url":"/Users/jaisurajbantupalli/competitive coding/ex.cpp","tests":[{"id":1675516743777,"input":"abcde f\n2","output":"NO"},{"id":1675517047000,"input":"aaccdd d\n1","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/jaisurajbantupalli/competitive coding/ex.cpp","group":"local","local":true}

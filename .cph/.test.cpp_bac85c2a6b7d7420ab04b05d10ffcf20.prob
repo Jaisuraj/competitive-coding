@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/Users/jaisurajbantupalli/competitive coding/test.cpp","tests":[{"id":1662741112831,"input":"3\n116\n136\n61\n11\n616\n216\n376\n61\n6\n-1","output":"3\n116\n61\n11\n616\n61\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/jaisurajbantupalli/competitive coding/test.cpp","group":"local","local":true}
