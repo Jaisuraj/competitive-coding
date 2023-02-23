@@ -26,7 +26,40 @@ int main()
         string s;
         cin >> n >> s;
         string k = s;
-        sort(s.begin(), s.end());
-        cout << s << endl;
+        ll y=0, x=0;
+        for (ll i = 0; i < n; i++)
+        {
+            if(s[i]=='0')
+            {
+                x++;
+            }
+            if(s[i]=='1')
+            {
+                break;
+            }
+        }
+        for (ll i = n-1; i>=0; i--)
+        {
+            if(s[i]=='1')
+            {
+                y++;
+            }
+            if(s[i]=='0')
+            {
+                break;
+            }
+        }
+        //cout << x+1 << " " << y << endl;
+        if(x+1+y>n)
+        {
+            cout << s << endl;
+        }
+        else
+        {
+            while(x-->=0)
+                cout << '0';
+            while(y-->0)cout << '1';
+            cout << endl;
+        }
     }
 }
