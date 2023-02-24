@@ -44,7 +44,6 @@ int main()
             {
                 k2++;
                 mp[s[i]]--;
-
             }
             ans = min(ans, mp['1'] + k1);
             ans = min(ans, mp['0'] + k2);

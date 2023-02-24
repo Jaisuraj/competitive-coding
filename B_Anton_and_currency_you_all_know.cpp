@@ -21,22 +21,22 @@ int main()
     string s;
     cin>>s;
     ll l = s.length();
-    map<char, ll> mp;
-    ll c;
+    ll c, f=l;
     c = s[l - 1] - '0';
-    if(c%2==0)
-        cout << s << endl;
-    else
-    {
     for (ll i = 0; i < l; i++)
-    {
-        c = s[i] - '0';
-        if(c%2==0)
+        if ((s[i] - '0') % 2 == 0)
         {
-            cout << i << endl;
+            f = i;
+            if (s[l - 1] > s[i])
+                break;
         }
 
+    if (l== f)
+        cout << -1 << endl;
+    else
+    {
+        swap(s[f], s[l-1]);
+        cout << s << endl;
     }
-    //cout <<c<< endl;
-    }
+    
 }
