@@ -17,27 +17,23 @@ typedef long long int ll;
     cout.tie(0)
 
 ll n,k,m;
-string s;
+string s,s1;
 const ll N = 1000000000000L;
 const ll INF = 1;
 vector<ll> a,b;
 vector<vector<ll>> v;
-map<char, ll> mp;
 
+ll power1(ll n,ll m)
+{
+    if(m==0)
+        return 1;
+    if(n==0)
+        return 0;
+    return n * power1(n, m - 1);
+}
 int main()
 {
-    cin >> m;
-    a.resize(m);
-    for (ll i = 0; i < m; i++)
-    {
-        cin >> a[i];
-    }
-    cin >> n;
-    b.resize(n);
-    for (ll i = 0; i < n;i++)
-    {
-        cin >> b[i];
-    }
-    ll mid = (n + m) / 2;
+    cin>>n>>m;
+    cout << power1(n, m) << endl;
     
 }

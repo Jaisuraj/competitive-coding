@@ -20,24 +20,41 @@ ll n,k,m;
 string s;
 const ll N = 1000000000000L;
 const ll INF = 1;
-vector<ll> a,b;
-vector<vector<ll>> v;
-map<char, ll> mp;
+vector<ll> a,b,c;
+
+ll f1(vector<ll> a, ll size,
+                    ll x)
+{
+      if(size == 0)
+        return 0;
+      ll ans = f1(a, size - 1, x);
+     
+    if(a[size - 1] == x)
+    {
+      b[ans++] = size - 1;
+    }
+    return ans;
+}
+ 
+void f(vector<ll> a, ll n, ll x)
+{
+    ll size = f1(a, n, x);
+    for (int i = 0; i < size; i++) {
+        cout << b[i] << " ";
+    }
+}
 
 int main()
 {
-    cin >> m;
-    a.resize(m);
-    for (ll i = 0; i < m; i++)
-    {
-        cin >> a[i];
-    }
-    cin >> n;
+    cin>>n;
+    a.resize(n);
     b.resize(n);
     for (ll i = 0; i < n;i++)
     {
-        cin >> b[i];
+        cin >> a[i];
     }
-    ll mid = (n + m) / 2;
-    
+    ll x;
+    cin >> x;
+    f(a, n, x);
+
 }

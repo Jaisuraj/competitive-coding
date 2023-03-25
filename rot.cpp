@@ -20,24 +20,36 @@ ll n,k,m;
 string s;
 const ll N = 1000000000000L;
 const ll INF = 1;
-vector<ll> a,b;
-vector<vector<ll>> v;
-map<char, ll> mp;
+vector<ll> a,b,c;
 
 int main()
 {
-    cin >> m;
-    a.resize(m);
-    for (ll i = 0; i < m; i++)
-    {
-        cin >> a[i];
-    }
-    cin >> n;
+    ll n;
+    cin>>n;
+    a.resize(n);
     b.resize(n);
     for (ll i = 0; i < n;i++)
     {
-        cin >> b[i];
+        cin >> a[i];
     }
-    ll mid = (n + m) / 2;
+    ll r;
+    cin>>r;
+    ll k = 0,temp=a[0];
+    r = r % n;
+    while(r--)
+    {
+        temp = a[0];
+    for (ll i = 0; i < n - 1; i++)
+    {
+            a[i] = a[i + 1];
+    }
+    
+    a[n-1] = temp;
+    }
+    
+    for (ll i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
     
 }

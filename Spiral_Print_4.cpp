@@ -25,8 +25,7 @@ vector<vector<ll>> v;
 int main()
 {
     ll m,n;
-    cin>>m;
-    cin >> n;
+    cin>>m>>n;
     for (ll i = 0;i<m;i++)
     {
         for (ll j = 0; j < n;j++)
@@ -38,14 +37,57 @@ int main()
         v.push_back(a);
         a.clear();
     }
-    ll k = 0,t=m;
-    for (ll i = 0; i < n; i++)
-    {
-        t = m;
-        while (t > 0)
+    ll top = 0,left=0,right=n-1,down=m-1;
+    ll nn = (m * n);
+    ll c;
+    // for (ll i = 0; i < m;i++)
+    // {
+    //     for (ll j = 0; j < n;j++)
+    //     {
+    //         cout << v[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+        while (c <nn)
         {
-
-
+        k++;
+        for (ll i = top; i <= right; i++)
+        {
+            if(c<nn)
+            {
+            cout << v[top][i] << " ";
+            c++;
+            }
         }
-    }
+            top++;
+            for (ll i = top; i <=down; i++)
+            {
+                if(c<nn)
+            {
+                cout << v[i][right] << " ";
+                c++;
+            }
+            }
+            right--;
+
+            for (ll i = right; i >= left; i--)
+            {
+                if(c<nn)
+            {
+                cout << v[down][i] << " ";
+                c++;
+            }
+            }
+            down--;
+            for (ll i = down; i >= top; i--)
+            {
+                if(c<nn)
+            {
+                cout << v[i][left] << " ";
+                c++;
+            }
+            }
+            left++;
+            
+        }
 }
