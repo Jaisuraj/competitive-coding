@@ -20,23 +20,24 @@ ll n,k,m;
 string s;
 const ll N = 1000000000000L;
 const ll INF = 1;
-vector<ll> a,b,c;
-
-ll f1(ll size,ll ans)
-{
-    if(size==n)
-        return a[n-1];
-    
-    return ans + f1(size + 1, a[size]);
-}
+vector<ll> a,b;
+vector<vector<ll>> v;
+map<char, ll> mp;
 
 int main()
 {
-    cin>>n;
-    a.resize(n);
+    cin>>s;
+    string k = "";
+    n = s.length();
     for (ll i = 0; i < n; i++)
     {
-        cin >> a[i];
+        if(mp[s[i]]<1)
+        {
+            mp[s[i]]++;
+            k = k + s[i];
+        }
+        else
+            continue;
     }
-    cout<<f1(0,0)<<endl;
+    cout << k << endl;
 }

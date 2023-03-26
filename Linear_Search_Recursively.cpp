@@ -8,6 +8,7 @@
 #include<iomanip>
 #include<set>
 #include<unordered_set>
+#include<unordered_map>
 using namespace std;
 
 typedef long long int ll;
@@ -17,19 +18,25 @@ typedef long long int ll;
     cout.tie(0)
 
 ll n,k,m;
-string s;
+string s,s1;
 const ll N = 1000000000000L;
 const ll INF = 1;
-vector<ll> a,b,c;
+vector<ll> a,b;
+vector<vector<ll>> v;
 
-ll f1(ll size,ll ans)
+
+
+ll lin(ll x,ll n1)
 {
-    if(size==n)
-        return a[n-1];
-    
-    return ans + f1(size + 1, a[size]);
+    if(n1==n)
+        return -1;
+    if(x==a[n1])
+    {
+        return 1;
+    }
+    ll f= lin(x, n1 + 1);
+    return f;
 }
-
 int main()
 {
     cin>>n;
@@ -38,5 +45,8 @@ int main()
     {
         cin >> a[i];
     }
-    cout<<f1(0,0)<<endl;
+    ll x;
+    cin >> x;
+    ll f = lin(x,0);
+    (f == -1) ? cout << "false" : cout << "true";
 }

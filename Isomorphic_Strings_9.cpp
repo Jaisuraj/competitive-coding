@@ -8,6 +8,7 @@
 #include<iomanip>
 #include<set>
 #include<unordered_set>
+#include<unordered_map>
 using namespace std;
 
 typedef long long int ll;
@@ -23,21 +24,33 @@ const ll INF = 1;
 vector<ll> a,b;
 vector<vector<ll>> v;
 
-bool isIsomorphic(string s, string t) {
-        map<char,char> mp,mp1;
-        int i=0,j=0;
-        while(i<s.length() && j<t.length()){
-            if(!mp.count(s[i]) && !mp1.count(t[j])){
-                mp[s[i]]=t[j];
-                mp1[t[j]]=s[i];
-            }else{
-                if(mp[s[i]]!=t[j] || mp1[t[j]]!=s[i]) return false;
+bool f1(string st1, string st2)
+{
+    unordered_map<char, char> charCount;
+    for (int i = 0; i < st1.length(); i++)
+    {
+        if (charCount.count(st1[i]))
+        {
+            if (charCount[st1[i]] != st2[i]) {
+                return false;
             }
-            i++;j++;
         }
-        return true;
+        else {
+            vector<char> values;
+            for (auto it : charCount) {
+                values.push_back(it.second);
+            }
+            if (find(values.begin(), values.end(), st2[i])
+                != values.end()) {
+                return false;
+            }
+            else {
+                charCount[st1[i]] = st2[i];
+            }
+        }
     }
-
+    return true;
+}
 
 int main()
 {
@@ -74,6 +87,6 @@ int main()
     //     mp[s[i]] = s1[i];
     //     mp2[s1[i]] = s[i];
     // }
-    f = isIsomorphic(s, s1);
-    (f == true) ? cout << "true" : cout << "false";
+    f = f1(s, s1);
+    (f == true&&s.length()==s1.length()) ? cout << "true" : cout << "false";
 }

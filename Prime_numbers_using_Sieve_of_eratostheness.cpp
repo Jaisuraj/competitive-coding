@@ -20,23 +20,30 @@ ll n,k,m;
 string s;
 const ll N = 1000000000000L;
 const ll INF = 1;
-vector<ll> a,b,c;
+vector<ll> a,b;
+vector<vector<ll>> v;
+map<char, ll> mp;
 
-ll f1(ll size,ll ans)
+bool isPrime(ll n1)
 {
-    if(size==n)
-        return a[n-1];
-    
-    return ans + f1(size + 1, a[size]);
+    ll f = 0;
+    if(n1==1||n1==0)
+        return false;
+    for (ll i = 2; i <=n1 / 2;i++)
+    {
+        if((n1%i)==0)
+        {
+            return false;
+        }
+    }
+    return true;
 }
-
 int main()
 {
     cin>>n;
-    a.resize(n);
-    for (ll i = 0; i < n; i++)
+    for (ll i = 0;i<=n;i++)
     {
-        cin >> a[i];
+        if(isPrime(i))
+            cout << i << " ";
     }
-    cout<<f1(0,0)<<endl;
 }
