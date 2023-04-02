@@ -24,26 +24,32 @@ vector<ll> a,b;
 vector<vector<ll>> v;
 map<char, ll> mp;
 
-
-ll gcd(ll a, ll b)
-{
-  if (a == 0)
-    return b;
-  return gcd(b % a, a);
-}
-
 int main()
 {
-  cin >> n;
-  a.resize(n);
-  for (ll i = 0;i<n;i++)
-  {
-    cin >> a[i];
-  }
-  ll ans=a[0];
-  for (ll i = 0; i < n - 1; i++)
-  {
-    ans = gcd(ans, a[i + 1]);
-  }
-  cout << ans << endl;
+    getline(cin, s);
+    vector<string> st;
+    string k = "";
+    ll ans = 999, ind;
+    for (ll i = 0; i < s.length(); i++)
+    {
+        if(s[i]!=' ')
+        {
+            k = k + s[i];
+        }
+        else
+        {
+            st.push_back(k);
+            k = "";
+        }
+    }
+    st.push_back(k);
+    for (ll i = 0; i < st.size();i++)
+    {
+        if(st[i].length()<ans)
+        {
+            ind = i;
+            ans=st[i].length();
+        }
+    }
+    cout << st[ind] << endl;
 }

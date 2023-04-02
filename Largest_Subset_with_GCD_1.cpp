@@ -36,14 +36,9 @@ int main()
 {
   cin >> n;
   a.resize(n);
-  for (ll i = 0;i<n;i++)
+  for (ll i = 0; i < n; i++)
   {
     cin >> a[i];
   }
-  ll ans=a[0];
-  for (ll i = 0; i < n - 1; i++)
-  {
-    ans = gcd(ans, a[i + 1]);
-  }
-  cout << ans << endl;
+  
 }

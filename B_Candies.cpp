@@ -22,24 +22,40 @@ const ll N = 1000000000000L;
 const ll INF = 1;
 vector<ll> a,b;
 vector<vector<ll>> v;
+map<char, ll> mp;
+
 int main()
 {
-    getline(cin,s);
-    vector<string> v;
-    string k = "";i
-    n = s.length();
-    for (ll i = 0; i < s.length(); i++)
+    ll t;
+    cin>>t;
+    while(t--)
     {
-        if(s[i]!=' '&&i!=n-1)
+        ll x;
+        cin >> x;
+        if(x%2==0)
         {
-            k = s[i] + k;
+            cout << -1 << endl;
         }
         else
         {
-            if(i==n-1)
-                k = s[i] + k;
-            cout << k << " ";
-            k = "";
+        ll f = 0;
+        for(ll i = 29;i >= 1;i--) {
+        if((x >> i) & 1) {
+            f = 1;
+            a.push_back(2);
         }
+        else if(f) {
+            a.push_back(1);
+        }
+        
+        }
+        cout << a.size()<<endl;
+        for (auto i : a)
+        {
+            cout << i << " ";
+        }
+        cout << endl;
+        }
+        a.clear();
     }
 }

@@ -40,14 +40,6 @@ int main()
     ll top = 0,left=0,right=n-1,down=m-1;
     ll nn = (m * n);
     ll c;
-    // for (ll i = 0; i < m;i++)
-    // {
-    //     for (ll j = 0; j < n;j++)
-    //     {
-    //         cout << v[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
         while (c <nn)
         {
         k++;

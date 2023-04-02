@@ -24,26 +24,24 @@ vector<ll> a,b;
 vector<vector<ll>> v;
 map<char, ll> mp;
 
-
-ll gcd(ll a, ll b)
-{
-  if (a == 0)
-    return b;
-  return gcd(b % a, a);
-}
-
+#include<iostream>
+using namespace std;
 int main()
 {
-  cin >> n;
-  a.resize(n);
-  for (ll i = 0;i<n;i++)
-  {
-    cin >> a[i];
-  }
-  ll ans=a[0];
-  for (ll i = 0; i < n - 1; i++)
-  {
-    ans = gcd(ans, a[i + 1]);
-  }
-  cout << ans << endl;
+    int n = 100;
+    int a[100][100];
+    for (int i = 0; i < 100; i++)
+    {
+        for (ll j = 0; j < 100;j++)
+        {
+            a[i][j] = 1;
+        }
+    }
+    //     int t = 0, t1 = 0;
+    // for (int i = 0; i < s.length(); i=i+2)
+    // {
+    //     t=s[i]-48 + t;
+    //     t1 = s[i + 1] - 48 + t1;
+    // }
+    // cout << t1-t << endl;
 }

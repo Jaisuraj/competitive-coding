@@ -94,31 +94,35 @@ node* delbet(node* head,int pos)
     return head;
 }
 
+node* swp(node*head)
+{
+    node *temp = head;
+    while (temp != NULL && temp->next != NULL) {
+        swap(temp->data,temp->next->data);
+        temp = temp->next->next;
+    }
+
+    return head;
+}
+
 int main()
 {
     node* head=NULL;
-    int t;
-    cin >> t;
-    while(t--)
+    while(1)
     {
         int n;
         cin >> n;
-        switch(n)
+        if(n==-1)
         {
-        case 1:
-            int k;
-            cin >> k;
-            head = insertbegin(head, k);
             break;
-        case 0:
-            //head = delbet(head,2);
-            while (head != NULL)
-            {
-                cout << head->data << "=>";
-                head = head->next;
-            }
-            cout <<"NULL" << endl;
         }
-}
+        head = insertnode(head, n);
+    }
+    head = swp(head);
+    while(head!=NULL)
+    {
+        cout << head->data << endl;
+        head = head->next;
+    }
 }
 

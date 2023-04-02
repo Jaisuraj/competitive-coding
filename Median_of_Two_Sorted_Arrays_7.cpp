@@ -40,11 +40,11 @@ double f(vector<double> a1,vector<double>b1)
         ll mid = (lo + hi) / 2;
         ll las = mid;
         ll lab = tot - mid;
-        ll la = (las>0)?a1[las - 1]:INT_MIN;
+        ll la = (las > 0) ? a1[las - 1] : INT_MIN;
         ll lb = (lab>0)?b1[lab - 1]:INT_MIN;
         ll ra = (la<n)?a1[las]:INT_MAX;
-        ll rb = (lb<m)?b1[lab]:INT_MAX;
-        if(la<=rb and lb<=ra)
+        ll rb = (lb < m) ? b1[lab] : INT_MAX;
+        if (la <= rb and lb <= ra)
         {
             if((m+n)%2==0)
             {

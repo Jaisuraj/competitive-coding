@@ -135,5 +135,5 @@ int main()
 
      Inorder(t);
      cout << endl;
-     cout << a[k] << endl;
+     cout << a[k-1] << endl;
 }
